@@ -5,15 +5,17 @@ package id.ac.polinema.midterm;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//Di awal pengerjakan,saya kesulitan untuk membuat wakatime.
+//karena itu,saya mengerjakan terlebih dahulu dan baru saat ini wakatime saya selesai.
 /**
  *
  * @author dhanifudin
  */
 public class Item {
-    private String nama;
-    private float harga;
-    public int jumlah;
+    
+    protected String nama;
+    protected float harga;
+    protected int jumlah;
 
     public Item(String nama, float harga, int jumlah) {
         this.nama = nama;
@@ -21,31 +23,8 @@ public class Item {
         this.jumlah = jumlah;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setHarga(float harga) {
-        this.harga = harga;
-    }
-
-    public void setJumlah(int jumlah) {
-        this.jumlah = jumlah;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public float getHarga() {
-        return harga;
-    }
-
-    public int getJumlah() {
-        return jumlah;
-    }
-    
-    public float hargatotal(){
-        return(jumlah * harga);
+    @Override
+    public String toString(){
+        return "|" + (nama) + "\t\t|" +(harga)+ "\t|" + (jumlah)+ "\t\t|"+(harga*jumlah)+ "/|";
     }
 }

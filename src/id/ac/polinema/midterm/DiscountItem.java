@@ -11,13 +11,22 @@ package id.ac.polinema.midterm;
  */
 public class DiscountItem extends Item //menggunakan extends supaya variabel di class Item bisa dipakai
 {
-    public float discount;
+    private float discount;
 
     public DiscountItem(float discount, String nama, float harga, int jumlah) { //pengisian constructor dan variabel sesuai sugesti di UTS Github
         super(nama, harga, jumlah);
-        this.discount = discount;
+        this.discount = discount * 100;
     }
-    public float hargadiskon(float harga){//pembuatan method sesuai sugesti di UTs github
-        return(jumlah * harga)-(harga *discount);
+    
+    public float getdiscount(){
+        return (jumlah * harga) * discount ;
+    }
+    
+    public float totalharga(){
+        return harga * jumlah - getdiscount();
+    }
+    
+    public String toString(){
+        return "|" + nama +"\t\t"+"|"+ harga +"\t"+"|"+ jumlah +"\t\t"+"|"+ totalharga()+"\t|"+"\t|"+"\n| - Disc"+"\t\t"+"|"+ discount +"%\t\t|\t";
     }
 }

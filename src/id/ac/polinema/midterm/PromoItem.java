@@ -9,8 +9,9 @@ package id.ac.polinema.midterm;
  *
  * @author Artha Ramandika
  */
-public class PromoItem extends Item
-{
+public class PromoItem extends Item{
+    
+    
     private float promo;
 
     public PromoItem(float promo, String nama, float harga, int jumlah) {
@@ -18,7 +19,11 @@ public class PromoItem extends Item
         this.promo = promo;
     }
     
-    public float hargapromo(float harga){
-        return(jumlah * harga)-promo;
+    public float hargapromo(){
+        return(jumlah * harga)-(promo*jumlah);
+    }
+    
+    public String toString(){
+        return "|" + nama +"\t\t"+"|"+ harga +"\t"+"|"+ jumlah +"\t\t"+"|"+ hargapromo()+"\t|"+"\t|"+"\n| - Disc"+"\t\t"+"|"+ promo +"%\t\t|\t";
     }
 }
